@@ -7,7 +7,7 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-
+ 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -125,18 +125,23 @@ if ! shopt -oq posix; then
 fi
 
 # add the scripts to path
-export PATH="$PATH:/home/nico/scripts"
+export PATH="$PATH:/home/nico/scripts:/home/nico/.local/bin"
 
 # add wal color scheme
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat ~/.cache/wal/sequences &)
+(cat /home/nico/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+cat /home/nico/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh:w
+source /home/nico/.cache/wal/colors-tty.sh
+
+# no folder hightlighing 
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
 

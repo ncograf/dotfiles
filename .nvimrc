@@ -1,7 +1,5 @@
 "Nicos Personal vimrc file created at 2021-03-08
 
-"
-" " Install vim plug when starting vim if necessary
 " Install vim plug when starting vim if necessary
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -30,6 +28,7 @@ let g:vimtex_quickfix_mode=0
 let g:tex_indent_brace=0
 let g:latex_indent_enabled=0
 let g:vimtex_compiler_progname='latexmk -pdf'
+let g:vimtex_view_forward_search_on_start=0
 set conceallevel=1
 "let g:tex_conceal='abdmg'
 
@@ -132,4 +131,5 @@ nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/
 " syntax enable
 " colorscheme dracula
 
-
+" fix highlighting for latex
+hi! clear Conceal

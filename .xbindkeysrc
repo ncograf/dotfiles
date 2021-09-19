@@ -78,6 +78,9 @@
 "sudo /home/nico/scripts/root_access/toggle_mic.sh"
   XF86AudioMicMute
 
+# suspend on lock key
+"systemctl suspend"
+  Mod4 + l
 
 ##################################
 # End of xbindkeys configuration #
