@@ -82,6 +82,10 @@
 "systemctl suspend"
   Mod4 + l
 
+# screenshot with image magic
+"screenshot.sh clip"
+  Shift+Control+s
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
