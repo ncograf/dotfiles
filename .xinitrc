@@ -14,8 +14,6 @@ xrandr  --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 3440x1440 --left-
 # setup keybindings
 xbindkeys
 
-# start script for inkscape might be a bit wasteful but we will see
-python /usr/src/inkscape-shortcut-manager/main.py &
-
 # start dwm
 exec dwm
+
