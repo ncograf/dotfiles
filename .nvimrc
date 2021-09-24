@@ -81,10 +81,10 @@ set expandtab
 set noshiftround
 
 
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
-  autocmd BufEnter * match OverLength /\%79v.*/
-augroup END
+"augroup vimrc_autocmds
+"  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
+"  autocmd BufEnter * match OverLength /\%79v.*/
+"augroup END
 
 " Cursor motion
 set scrolloff=3
