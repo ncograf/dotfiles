@@ -14,6 +14,9 @@ xrandr  --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 3440x1440 --left-
 # setup keybindings
 xbindkeys
 
+# start nm-applet
+nm-applet &
+
 # start dwm
 exec dwm
 
