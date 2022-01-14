@@ -13,6 +13,10 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
+" needed for merlin
+filetype plugin on
+syntax on
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -42,6 +46,12 @@ let g:UltiSnipsEditSplit="vertical"
 " If you have nodejs and yarn
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+" ocaml formating"
+Plug 'sbdchd/neoformat'
+
+" llvm plugin"
+Plug 'rhysd/vim-llvm'
+
 call plug#end()
 
 
@@ -49,9 +59,9 @@ call plug#end()
 " iamcco/markdown-preview.nvim
 " .............................................................................
 
-let g:mkdp_auto_close=0
-let g:mkdp_refresh_slow=1
-
+let g:mkdp_auto_start=1
+let g:mkdp_auto_close=1
+let g:mkdp_refresh_slow=0
 
 " Settings for  vim-tex plugin
 
@@ -91,6 +101,9 @@ set scrolloff=3
 set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim
+
+" set the timeout lenght for keys
+set timeoutlen=200
 
 " Move up/down editor lines
 nnoremap j gj
@@ -136,3 +149,5 @@ inoremap <C-a> <Esc>: exec '.!python_screenshot.py create "'.getline('.').'" "'.
 
 " fix highlighting for latex
 hi! clear Conceal
+
+execute "set rtp+=/home/nico/.opam/4.06.0/share/merlin/vim"

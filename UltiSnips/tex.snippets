@@ -37,6 +37,14 @@ snippet template "Basic template" b
 \end{document}
 endsnippet
 
+snippet \bf "Bold font" iA
+\textbf{$1}$0
+endsnippet
+
+snippet \em "italic font" iA
+\emph{$1}$0
+endsnippet
+
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
 	$0
@@ -49,8 +57,22 @@ snippet bea "begin{align*} / end{align*}" bA
 \\end{align*}
 endsnippet
 
-snippet tx "\text{ }" iA
-\text{$0}
+snippet ben "begin{align} / end{align}" bA
+\\begin{align}
+	$0
+\\end{align}
+endsnippet
+
+snippet bet "begin{theorem} / end{theroem}" bA
+\\begin{theorem}{$1}
+	$0
+\\end{theorem}
+endsnippet
+
+snippet bed "begin{definition} / end{defintion}" bA
+\\begin{definition}{$1}
+	$0
+\\end{definition}
 endsnippet
 
 priority 100
@@ -108,6 +130,7 @@ snippet =< "implied by" Ai
 \impliedby
 endsnippet
 
+
 context "math()"
 snippet iff "iff" Ai
 \iff
@@ -163,6 +186,11 @@ while True:
 	i-=1
 snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}$0
+endsnippet
+
+context "math()"
+snippet '^(.+)([\\_^\(\)A-Za-z]+)(\.,|,\.)' "vector" wrA
+`!p snip.rv = match.group(1)`\vec{`!p snip.rv = match.group(2)`}
 endsnippet
 
 context "math()"
@@ -623,6 +651,12 @@ snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
+priority 110
+context "math()"
+snippet "hbar" "hbar" riA
+\hbar
+endsnippet
+
 priority 10
 context "math()"
 snippet "hat" "hat" riA
@@ -646,6 +680,11 @@ endsnippet
 
 snippet DD "D" iA
 \mathbb{D}
+endsnippet
+
+context "math()"
+snippet '\.(.+)\.(b)' "mathbf" wrA
+\mathbf{`!p snip.rv=match.group(1)`}
 endsnippet
 
 # vim:ft=snippets

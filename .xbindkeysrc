@@ -88,15 +88,23 @@
 
 # monitor change
 "toggle_monitor.sh right"
-  Mod5 + XF86Display
+  Alt + Print
 
 # monitor change
 "toggle_monitor.sh left"
-  Alt + XF86Display
+  Control + Print 
 
 # monitor change
 "toggle_monitor.sh same"
-  XF86Display
+ Print 
+
+# only home
+"toggle_monitor.sh only-screen"
+ Shift + Control + Print
+
+# fix bluetooth issue on once
+"rs_bt"
+ XF86Favorites
 
 ##################################
 # End of xbindkeys configuration #

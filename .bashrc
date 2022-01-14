@@ -145,3 +145,8 @@ eval "$(dircolors -p | \
     sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
     dircolors /dev/stdin)"
 
+# set up ocamlbuild
+eval $(opam config env)
+
+# set up the keychain for ssh
+eval $(keychain --eval --quiet gitlab_eth)
