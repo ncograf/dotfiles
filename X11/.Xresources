@@ -1,0 +1,40 @@
+! Settings for the applications using XResources such as the urxvt terminal
+
+! Colors will be added in another file which is atomatically created by pywal
+
+! Set the font used
+URxvt*font: xft:Hack\ Nerd\ Font\ Mono:style=Regular:size=13:antialias=true:autohint=true
+
+! make the spaces between the letters smaller
+URxvt*letterSpace: -1 
+
+! change the Window settings
+URxvt*borderLess: false
+URxvt*externalBorder: 0
+URxvt*internalBorder: 4
+
+URxvt*scrollBar: false
+
+! this should make it possible to scroll though 5000 lines 
+URxvt*saveLines: 5000
+
+! ----------------------- 
+! -- Add tabs in URxvt -- 
+! -----------------------
+! seems not to work because tabbedex is not found in the perl path
+!URxvt*perl-ext-common: default, tabbedex
+!URxvt*keysym.Control-Shift-N: perl:tabbedex:new_tab
+!URxvt*keysym.Control-Shift-K: perl:tabbedex:next_tab
+!URxvt*keysym.Control-Shift-J: perl:tabbedex:prev_tab
+
+!URxvt*keysym.Control-Shift-R: perl:tabbedex:rename_tab
+!URxvt*keysym.Control-Shift-H: perl:tabbedex:move_tab_left
+!URxvt*keysym.Control-Shift-L: perl:tabbedex:move_tab_right
+
+!URxvt*tabbedex.tabbar-fg: 15
+!URxvt*tabbedex.tabbar-bg: 236
+!URxvt*tabbedex.tab-fg: 110
+!URxvt*tabbedex.tab-bg: 110
+
+!URxvt*tabbedex.transparent: true
+!URxvt*new-button: false
