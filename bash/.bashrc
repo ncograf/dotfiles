@@ -57,8 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 function change_prompt () {
-  if [ -f /home/nico/.bash_prompt.sh ]; then
-      temp=$(. /home/nico/.bash_prompt.sh)
+  if [ -f "$HOME/.bash_prompt.sh" ]; then
+      temp=$(. "$HOME/.bash_prompt.sh")
       PS1="$temp"
   fi
 }
@@ -125,20 +125,20 @@ if ! shopt -oq posix; then
 fi
 
 # add the scripts to path
-export PATH="$PATH:/home/nico/scripts:/home/nico/.local/bin"
+export PATH="$PATH:$HOME/scripts:$HOME/.local/bin"
 
 # add wal color scheme
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat /home/nico/.cache/wal/sequences &)
+(cat "$HOME/.cache/wal/sequences" &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat /home/nico/.cache/wal/sequences
+cat "$HOME/.cache/wal/sequences"
 
 # To add support for TTYs this line can be optionally added.
-source /home/nico/.cache/wal/colors-tty.sh
+source "$HOME/.cache/wal/colors-tty.sh"
 
 # no folder hightlighing 
 eval "$(dircolors -p | \
@@ -149,4 +149,4 @@ eval "$(dircolors -p | \
 eval $(opam config env)
 
 # set up the keychain for ssh
-eval $(keychain --eval --quiet gitlab_eth)
+eval $(keychain --eval --quiet gitlab_eth github_rsa)

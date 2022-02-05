@@ -55,9 +55,8 @@ ln -sf "$DOTFILES/tmuxp/arch_installer.yml" "$XDG_CONFIG_HOME/tmuxp/arch_install
 mkdir -p "$XDG_DATA_HOME"
 cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 
-#########
-# Dunst #
-#########
+###############
+# Keybindings #
+###############
+ln -s "$DOTFILES/X11/.xbindkeysrc" "$HOME"
 
-mkdir -p "$XDG_CONFIG_HOME/dunst"
-ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
