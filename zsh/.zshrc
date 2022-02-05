@@ -43,7 +43,10 @@ fpath=($ZDOTDIR/external $fpath)
 # change the prompt
 autoload -Uz prompt_purification_setup; prompt_purification_setup
 
-
+# change keybinding for clearing the shell since ctrl + l is used in tmux to navigate panes
+bindkey -r '^l'
+bindkey -r '^g'
+bindkey -s '^g' 'clear\n'
 
 # Push the current directory visited on to the stack
 setopt AUTO_PUSHD
@@ -80,6 +83,7 @@ source ~/dotfiles/zsh/external/bd.zsh
 
 # load infoscirpt for the my zsh
 source $DOTFILES/zsh/scripts/infotools.sh
+source $DOTFILES/zsh/scripts/tools.sh
 
 # add fuzy find to the shell
 # CTRL + t -> search for a file in the current directory and sub-directories
@@ -95,5 +99,3 @@ fi
 if [[ -z $DISPLAY ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
   pgrep dwm || startx 
 fi
-
-

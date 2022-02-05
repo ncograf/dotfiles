@@ -83,7 +83,7 @@ git_prompt_status() {
   fi
 
   if [[ ! -z "$STATUS" ]]; then
-    echo " [ $STATUS]"
+    echo " %F{white}[%f $STATUS %F{white}]%f"
   fi
 }
 
