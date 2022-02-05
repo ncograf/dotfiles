@@ -1,0 +1,48 @@
+session_name: mouseless_setup
+start_directory: $HOME/dotfiles
+
+
+windows: 
+  - window_name: install
+    layout: 
+    panes:
+      - nvim install.sh
+      - ll
+  - window_name: tmux
+    start_directory: tmux
+    layout: 
+    panes: 
+      - nvim tmux.conf
+      - ll
+  - window_name: nvim 
+    start_directory: nvim 
+    panes:
+      - nvim init.vim
+      - ll
+  - window_name: zsh
+    start_directory: zsh
+    panes: 
+      - nvim .zshrc
+      - ll
+  - window_name: tmuxp
+    start_directory: tmuxp 
+    panes: 
+    - ll
+    -
+  - window_name: fonts
+    start_directory: fonts
+    panes:
+    - ll
+    - 
+  - window_name: dunst
+    start_directory: dunst
+    panes:
+    - nvim dunstrc
+    - ll
+  - window_name: X11
+    start_direcotry: X11
+    panes:
+    - nvim .xinitrc
+    - ll
+
+
