@@ -18,16 +18,16 @@ sudo /home/nico/scripts/root_access/wireless_startup.sh &
 /home/nico/scripts/wal_paper.sh
 
 # start nm-applet
-nm-applet &
+# nm-applet &
 
 # merge xrdb settings (like fonts and so on into the terminal)
 xrdb -merge ~/.config/X11/.Xresources
-
-# start dwm
-exec dwm
 
 # start automatic mounting
 udiskie &
 
 # remap capslock to the escape key
 setxkbmap -option caps:escape
+
+# start bspwm
+exec bspwm
