@@ -58,5 +58,15 @@ cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 ###############
 # Keybindings #
 ###############
-ln -s "$DOTFILES/X11/.xbindkeysrc" "$HOME"
+ln -sf "$DOTFILES/X11/.xbindkeysrc" "$HOME"
+mkdir -p "$XDG_CONFIG_HOME/sxhkd"
+ln -sf "$DOTFILES/sxhkd/sxhkdrc" "$XDG_CONFIG_HOME/sxhkd/sxhkdrc"
 
+#########
+# bspwm #
+#########
+mkdir -p "$XDG_CONFIG_HOME/bspwm"
+ln -sf "$DOTFILES/bspwm/bspwmrc" "$XDG_CONFIG_HOME/bspwm/bspwmrc"
+mkdir -p "$XDG_CONFIG_HOME/polybar"
+ln -sf "$DOTFILES/polybar/config" "$XDG_CONFIG_HOME/polybar/config"
+ln -sf "$DOTFILES/polybar/launch.sh" "$XDG_CONFIG_HOME/polybar/launch.sh"
