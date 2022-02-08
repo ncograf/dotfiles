@@ -6,9 +6,57 @@
 super + shift + Return
 	urxvt
 
+super + shift + f
+    firefox
+
+super + shift + t
+    thunderbird
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+#
+# hardware controle
+#
+XF86AudioRaiseVolume
+    source $DOTFILES/zsh/scripts/tools.sh; change_volume up 5
+
+XF86AudioLowerVolume
+    source $DOTFILES/zsh/scripts/tools.sh; change_volume down 5
+
+XF86AudioMute
+    sudo /usr/src/hardware_tools/toggle_sound.sh
+
+XF86MonBrightnessUp
+    sudo /usr/src/hardware_tools/backlight.sh up 5
+
+XF86MonBrightnessDown
+    sudo /usr/src/hardware_tools/backlight.sh down 5
+
+XF86WLAN
+    sudo /usr/src/hardware_tools/toggle_flightmode.sh
+
+XF86AudioMicMute
+    sudo /usr/src/hardware_tools/toggle_mic.sh
+
+shift + ctrl + s
+    screenshot clip
+
+mod5 + Print
+    source $DOTFILES/zsh/scripts/tools.sh; toggle_monitor right
+
+ctrl + Print
+    source $DOTFILES/zsh/scripts/tools.sh; toggle_monitor left
+
+Print 
+    source $DOTFILES/zsh/scripts/tools.sh; toggle_monitor same
+
+shift + control + Print
+    source $DOTFILES/zsh/scripts/tools.sh; toggle_monitor only-screen
+
+XF86Favorites
+    source $DOTFILES/zsh/scripts/tools.sh; rs_bt
 
 #
 # bspwm hotkeys
@@ -58,9 +106,13 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+# move to a different monitor
+super + shift + {comma, period}
+    bspc node -m {prev, next} --follow
+
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 # super + {_,shift + }c
@@ -72,7 +124,11 @@ super + bracket{left,right}
 
 # focus the last node/desktop
 super + {grave,Tab}
-	bspc {node,desktop} -f last
+    bspc {node,desktop} -f last
+
+# focus monitor to the left / right
+super + {comma,period} 
+    bspc monitor -f {prev,next}
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -110,11 +166,11 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node {-z left -20 0 -z right -20 0,-z bottom 0 20,-z top 0 -20,-z left 20 0 -z right 20 0}
 
-# contract a window by moving one of its side inward
+# extend or shrink a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node {-z left -20 0 -z right 20 0,-z top 0 -20 -z bottom 0 20,-z top 0 20 -z bottom 0 -20,-z left 20 0 -z right -20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}

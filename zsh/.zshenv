@@ -25,6 +25,8 @@ export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+export WALLPAPERS="$HOME/wallpapers"
+
 
 # -- ZSH -- 
 

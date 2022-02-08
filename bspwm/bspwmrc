@@ -4,10 +4,20 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # lauch the polybar 
-$XDG_CONFIG_HOME/polybar/launch.sh
+# $XDG_CONFIG_HOME/polybar/launch.sh
 
-bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
-bspc monitor HDMI-1 -d I II III IV V VI VII VIII IX X
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+
+num=$(xrandr --listmonitors | awk -F '[/| |+]+' '/^[^M]/ {print $7}' | uniq | wc -l)
+
+if [[ $num -eq 1 ]]; then
+    bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
+else
+    bspc monitor eDP-1 -d I III V VII IX 
+    bspc monitor HDMI-1 -d II IV VI VIII X
+fi
+
 
 bspc config border_width         2
 bspc config window_gap          12

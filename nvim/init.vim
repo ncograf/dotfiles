@@ -33,8 +33,6 @@ nnoremap <leader>tn gt ; new tab
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 
 Plug 'lervag/vimtex'
-
-" This is for the auto completition in latex
 Plug 'SirVer/ultisnips'
 
 " requries nodejs and yarn
@@ -51,6 +49,9 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " make csv more readable
 Plug 'chrisbra/csv.vim'
+
+" get colorscheme
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
@@ -85,6 +86,10 @@ let g:winresizer_start_key = "<leader>w"
 
 " simnalamburt/vim-mundo
 nnoremap <leader>u :MundoToggle<cr>
+
+" dylanaraps/wal.vim
+colorscheme wal
+
 
 
 "####################

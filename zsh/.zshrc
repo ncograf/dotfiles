@@ -85,6 +85,10 @@ source ~/dotfiles/zsh/external/bd.zsh
 source $DOTFILES/zsh/scripts/infotools.sh
 source $DOTFILES/zsh/scripts/tools.sh
 
+# set colorscheme with wal
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
+
 # add fuzy find to the shell
 # CTRL + t -> search for a file in the current directory and sub-directories
 # CTRL + r -> serach for an entry in the command history
@@ -97,5 +101,5 @@ fi
 
 # start dwm on startup
 if [[ -z $DISPLAY ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
-  pgrep dwm || startx 
+  pgrep bspwm || startx 
 fi
