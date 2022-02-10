@@ -38,7 +38,7 @@ windows:
   - window_name: polybar
     start_directory: polybar
     panes:
-    - nvim config
+    - nvim config.ini
     - nvim launch.sh
   - window_name: sxhkd
     start_directory: sxhkd

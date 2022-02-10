@@ -9,12 +9,15 @@ super + shift + Return
 super + shift + f
     firefox
 
-super + shift + t
+super + shift + m
     thunderbird
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+super + z
+    setxbmap -option caps:escape
 
 #
 # hardware controle
@@ -72,11 +75,7 @@ super + {_,shift + }c
 
 # change to monocle layout
 super + m
-	bspc desktop -l monocle 
-
-# change to tiled layout
-super + t
-	bspc desktop -l tiled 
+	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
 super + y
@@ -91,8 +90,8 @@ super + Return
 #
 
 # set the window state
-# super + {t,shift + t,s,f}
-#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -165,12 +164,22 @@ super + ctrl + shift + space
 #
 
 # expand a window by moving one of its side outward
+# super + alt + {h,j,k,l}
+#	 {bspc node -z left -20 0; bspc node -z right -20 0,bspc node -z bottom 0 20; bspc node -z top 0 20,bspc node -z bottom 0 -20; bspc node -z top 0 20,bspc node -z left 20 0; bspc node -z right 20 }
+
 super + alt + {h,j,k,l}
-	bspc node {-z left -20 0 -z right -20 0,-z bottom 0 20,-z top 0 -20,-z left 20 0 -z right 20 0}
+    {bspc node -z left -20 0; bspc node -z right -20 0, \
+    bspc node -z top 0 -20; bspc node -z bottom 0 -20, \
+    bspc node -z top 0 20; bspc node -z bottom 0 20, \
+    bspc node -z left 20 0; bspc node -z right 20 0}
+
 
 # extend or shrink a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node {-z left -20 0 -z right 20 0,-z top 0 -20 -z bottom 0 20,-z top 0 20 -z bottom 0 -20,-z left 20 0 -z right -20 0}
+    {bspc node -z left -20 0; bspc node -z right 20 0, \
+    bspc node -z top 0 20; bspc node -z bottom 0 -20, \
+    bspc node -z top 0 -20; bspc node -z bottom 0 20, \
+    bspc node -z left 20 0; bspc node -z right -20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
