@@ -99,6 +99,9 @@ if [ $(command -v "fzf") ]; then
   source /usr/share/fzf/key-bindings.zsh
 fi
 
+# set up the keychain for ssh
+eval $(keychain --eval --quiet gitlab_eth github_rsa)
+
 # start dwm on startup
 if [[ -z $DISPLAY ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
   pgrep bspwm || startx 
