@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # start the urxvt deamon  with 
 # -q quiet in the background 
 # -o opendisplay -> keep the deamon process running all the time

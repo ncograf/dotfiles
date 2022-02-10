@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-NOTIFY_ICON=/usr/share/icons/Papirus/32x32/apps/system-software-update.svg
-
-get_total_updates() { UPDATES=$(yay -Sy > /dev/null; yay -Qu | wc -l); }
+get_total_updates() { UPDATES=$(checkupdates | wc -l); }
 
 while true; do
     get_total_updates
