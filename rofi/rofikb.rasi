@@ -1,0 +1,7 @@
+configuration {
+    kb-remove-char-forward:     "Delete";
+    kb-accept-entry:            "Return";
+    kb-remove-to-eol:           "Control+d";
+    kb-row-up:                  "Up,Control+k";
+    kb-row-down:                "Down,Control+j";
+}
