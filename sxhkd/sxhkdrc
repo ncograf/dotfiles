@@ -16,8 +16,13 @@ super + shift + m
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# remap escape key (needed for external keyboards)
 super + z
-    setxbmap -option caps:escape
+    setxkbmap -option caps:escape
+
+# powermenu
+super + p 
+    $XDG_CONFIG_HOME/rofi/powermenu/powermenu.sh
 
 #
 # hardware controle

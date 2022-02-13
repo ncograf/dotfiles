@@ -50,8 +50,7 @@ ln -sf "$DOTFILES/tmuxp/arch_installer.yml" "$XDG_CONFIG_HOME/tmuxp/arch_install
 #########
 # Fonts #
 #########
-
-# TODO fix that fonts in the folder $XDG_DATA_HOME are recoginized
+# we need to copy the folders since linking will create an extra link in the folder itself
 mkdir -p "$XDG_DATA_HOME"
 cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 
@@ -67,4 +66,9 @@ ln -sf "$DOTFILES/sxhkd/sxhkdrc" "$XDG_CONFIG_HOME/sxhkd/sxhkdrc"
 #########
 mkdir -p "$XDG_CONFIG_HOME/bspwm"
 ln -sf "$DOTFILES/bspwm/bspwmrc" "$XDG_CONFIG_HOME/bspwm/bspwmrc"
-ln -sf "$DOTFILES/polybar" "$XDG_CONFIG_HOME/polybar"
+cp -rf "$DOTFILES/polybar" "$XDG_CONFIG_HOME/polybar"
+
+########
+# rofi #
+########
+cp -rf "$DOTFILES/rofi" "$XDG_CONFIG_HOME/rofi"

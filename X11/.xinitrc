@@ -32,4 +32,6 @@ udiskie &
 setxkbmap -option caps:escape
 
 # start bspwm
+export DESKTOP_SESSION="bspwm"
 exec bspwm
+
