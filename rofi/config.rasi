@@ -1,1 +1,4 @@
 @import "rofikb.rasi"
+@import "theme.rasi"
+@import "colors.rasi"
+

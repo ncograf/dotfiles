@@ -7,7 +7,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "powermenu_color.rasi"
+@import "../colors.rasi"
 
 window {
     transparency:                   "real";

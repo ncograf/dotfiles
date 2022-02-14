@@ -12,7 +12,6 @@ URxvt*letterSpace: -1
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 4
-
 URxvt*scrollBar: false
 
 ! this should make it possible to scroll though 5000 lines 

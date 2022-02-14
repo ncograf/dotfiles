@@ -1,4 +1,5 @@
 * {
+    //powermenu colors
     background:                     #090906; //background
     background-alt:                 #58575B; //color1
     foreground:                     #aac0d4; //foreground
@@ -6,4 +7,11 @@
     border-alt:               		#C5AA11; //color5
     selected:               		#AB7335; //color3
     urgent:                         #986811; //color2
+
+    // launcher colors
+    al:  #09090600;
+    bg:  #090906;
+    se:  #AB7335;
+    fg:  #aac0d4;
+    ac:  #58575B;
 }

@@ -27,6 +27,9 @@ export VISUAL="nvim"
 
 export WALLPAPERS="$HOME/wallpapers"
 
+# rofi firefox extension
+export PATH="$PATH:$XDG_CONFIG_HOME/rofi/rofi-bookmarks"
+
 
 # -- ZSH -- 
 

@@ -1,6 +1,5 @@
 /* Message Dialog */
-
-@import "powermenu_color.rasi"
+@import "../colors.rasi"
 
 * {
     background-color:       @background;

@@ -24,6 +24,14 @@ super + z
 super + p 
     $XDG_CONFIG_HOME/rofi/powermenu/powermenu.sh
 
+# program launcher
+super + shift + space
+    rofi -modi drun -show drun -no-lazy-grab -theme $XDG_CONFIG_HOME/rofi/config.rasi
+
+# rofi 
+super + space
+    rofi -show bookmarks -modi 'bookmarks: rofi-bookmarks.py' -theme $XDG_CONFIG_HOME/rofi/config.rasi
+
 #
 # hardware controle
 #
