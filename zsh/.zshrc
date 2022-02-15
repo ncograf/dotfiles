@@ -13,7 +13,6 @@
 # For aliases
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
-
 # Autocompletition
 # vim keybindings for autocompletion
 zmodload zsh/complist
@@ -41,7 +40,7 @@ _comp_options+=(globdots)
 fpath=($ZDOTDIR/external $fpath)
 
 # change the prompt
-autoload -Uz prompt_purification_setup; prompt_purification_setup
+PROMPT=$'%F{while}%~ %B%F{blue}>%f%b '
 
 # change keybinding for clearing the shell since ctrl + l is used in tmux to navigate panes
 bindkey -r '^l'
@@ -101,6 +100,11 @@ fi
 
 # set up the keychain for ssh
 eval $(keychain --eval --quiet gitlab_eth github_rsa)
+
+# start tmux if not already running
+#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#  exec tmux
+#fi
 
 # start dwm on startup
 if [[ -z $DISPLAY ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
