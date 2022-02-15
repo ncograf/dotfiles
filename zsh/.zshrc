@@ -40,7 +40,7 @@ _comp_options+=(globdots)
 fpath=($ZDOTDIR/external $fpath)
 
 # change the prompt
-PROMPT=$'%F{while}%~ %B%F{blue}>%f%b '
+PROMPT=$'%F{white}%~ %B%F{blue}>%f%b '
 
 # change keybinding for clearing the shell since ctrl + l is used in tmux to navigate panes
 bindkey -r '^l'
@@ -85,7 +85,6 @@ source $DOTFILES/zsh/scripts/infotools.sh
 source $DOTFILES/zsh/scripts/tools.sh
 
 # set colorscheme with wal
-(cat ~/.cache/wal/sequences &)
 source ~/.cache/wal/colors-tty.sh
 
 # add fuzy find to the shell

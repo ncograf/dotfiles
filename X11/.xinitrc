@@ -24,6 +24,9 @@ source $DOTFILES/zsh/scripts/tools.sh; wal_paper wald
 
 # merge xrdb settings (like fonts and so on into the terminal)
 xrdb -merge ~/.config/X11/.Xresources
+if [ -f ~/.cache/wal/colors.Xresources ]; then
+    xrdb -merge ~/.cache/wal/colors.Xresources
+fi
 
 # start automatic mounting
 udiskie &
