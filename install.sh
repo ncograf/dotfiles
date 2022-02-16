@@ -29,7 +29,10 @@ mkdir -p "$XDG_CONFIG_HOME/nvim"
 # create undo folder that is used for the undo history as specified in the init.vim config
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
-ln -sf "$DOTFILES/nvim/UltiSnips" "$XDG_CONFIG_HOME/nvim/UltiSnips"
+cp -rf "$DOTFILES/nvim/UltiSnips" "$XDG_CONFIG_HOME/nvim/UltiSnips"
+ln -sf "$DOTFILES/nvim/coc.vim" "$XDG_CONFIG_HOME/nvim/coc.vim"
+ln -sf "$DOTFILES/nvim/coc-settings.json" "$XDG_CONFIG_HOME/nvim/coc-settings.json"
+ln -sf "$DOTFILES/nvim/status.vim" "$XDG_CONFIG_HOME/nvim/status.vim"
 
 # add Xresources for the settings of uxrvt
 rm -rf "$XDG_CONFIG_HOME/X11"
@@ -52,7 +55,7 @@ ln -sf "$DOTFILES/tmuxp/arch_installer.yml" "$XDG_CONFIG_HOME/tmuxp/arch_install
 #########
 # we need to copy the folders since linking will create an extra link in the folder itself
 mkdir -p "$XDG_DATA_HOME"
-cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
+cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME/"
 
 ###############
 # Keybindings #
