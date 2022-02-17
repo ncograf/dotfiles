@@ -50,8 +50,21 @@ Plug 'christoomey/vim-tmux-navigator'
 " make csv more readable
 Plug 'chrisbra/csv.vim'
 
+" rasi colorsceme (for rofi config)
+Plug 'Fymyte/rasi.vim'
+
 " get colorscheme
 Plug 'dylanaraps/wal.vim'
+
+" get coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'iamcco/coc-vimlsp'
+Plug 'neoclide/coc-python'
+Plug 'neoclide/coc-json'
+Plug 'clangd/coc-clangd'
+Plug 'neoclide/coc-snippets'
+Plug 'josa42/coc-sh'
+
 
 call plug#end()
 
@@ -71,10 +84,14 @@ set conceallevel=1
 "let g:tex_conceal='abdmg'
 
 " SirVer/ultisnips
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsExpandTrigger = '<leader><tab>'
+let g:UltiSnipsJumpForwardTrigger = '<leader><tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<leader><s-tab>'
 let g:UltiSnipsEditSplit="vertical"
+
+
+" fix highlighting for latex
+hi! clear Conceal
 
 " iamcco/markdown-preview.nvim
 let g:mkdp_auto_start=1
@@ -90,7 +107,8 @@ nnoremap <leader>u :MundoToggle<cr>
 " dylanaraps/wal.vim
 colorscheme wal
 
-
+" neoclide/coc.nvim 
+source $XDG_CONFIG_HOME/nvim/coc.vim
 
 "####################
 "# General settings #
@@ -121,6 +139,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set noshiftround
+
+" set status bar
+source $XDG_CONFIG_HOME/nvim/status.vim
 
 
 "augroup vimrc_autocmds
@@ -163,7 +184,7 @@ set smartcase
 set showmatch
 map <leader><space> :let @/=''<cr> " clear search
 
-" Remap escape key
+" Remap escape key (Note that capslock is mapped to Esc as well)
 inoremap jj <Esc>
 vnoremap jj <Esc> 
 
@@ -176,9 +197,6 @@ nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/
 
 " Mapping for Image insertion
 inoremap <C-a> <Esc>: exec '.!python_screenshot.py create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
-
-" fix highlighting for latex
-hi! clear Conceal
 
 " used for the compiler design course
 execute "set rtp+=/home/nico/.opam/4.06.0/share/merlin/vim"
