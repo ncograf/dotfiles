@@ -12,6 +12,9 @@ super + shift + f
 super + shift + m
     thunderbird
 
+super + shift + v
+    code
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -83,8 +86,8 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }c
-	bspc node -{c,k}
+super + shift + c
+	bspc node -c
 
 # change to monocle layout
 super + m
