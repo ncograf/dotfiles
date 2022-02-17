@@ -29,7 +29,8 @@ mkdir -p "$XDG_CONFIG_HOME/nvim"
 # create undo folder that is used for the undo history as specified in the init.vim config
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
-cp -rf "$DOTFILES/nvim/UltiSnips" "$XDG_CONFIG_HOME/nvim/UltiSnips"
+rm -rf "$XDG_CONFIG_HOME/nvim/UltiSnips"
+ln -sf "$DOTFILES/nvim/UltiSnips" "$XDG_CONFIG_HOME/nvim/UltiSnips"
 ln -sf "$DOTFILES/nvim/coc.vim" "$XDG_CONFIG_HOME/nvim/coc.vim"
 ln -sf "$DOTFILES/nvim/coc-settings.json" "$XDG_CONFIG_HOME/nvim/coc-settings.json"
 ln -sf "$DOTFILES/nvim/status.vim" "$XDG_CONFIG_HOME/nvim/status.vim"
@@ -57,7 +58,8 @@ ln -sf "$DOTFILES/tmuxp/arch_installer.yml" "$XDG_CONFIG_HOME/tmuxp/arch_install
 #########
 # we need to copy the folders since linking will create an extra link in the folder itself
 mkdir -p "$XDG_DATA_HOME"
-cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME/"
+rm -rf "XDG_DATA_HOME/fonts"
+ln -sf "$DOTFILES/fonts" "$XDG_DATA_HOME/fonts"
 
 ###############
 # Keybindings #
@@ -71,9 +73,11 @@ ln -sf "$DOTFILES/sxhkd/sxhkdrc" "$XDG_CONFIG_HOME/sxhkd/sxhkdrc"
 #########
 mkdir -p "$XDG_CONFIG_HOME/bspwm"
 ln -sf "$DOTFILES/bspwm/bspwmrc" "$XDG_CONFIG_HOME/bspwm/bspwmrc"
-cp -rf "$DOTFILES/polybar" "$XDG_CONFIG_HOME/polybar"
+rm -rf "$XDG_CONFIG_HOME/polybar"
+ln -sf "$DOTFILES/polybar" "$XDG_CONFIG_HOME/polybar"
 
 ########
 # rofi #
 ########
-cp -rf "$DOTFILES/rofi" "$XDG_CONFIG_HOME/rofi"
+rm -rf "$XDG_CONFIG_HOME/rofi"
+ln -sf "$DOTFILES/rofi" "$XDG_CONFIG_HOME/rofi"
