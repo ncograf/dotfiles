@@ -34,7 +34,9 @@ ln -sf "$DOTFILES/nvim/coc.vim" "$XDG_CONFIG_HOME/nvim/coc.vim"
 ln -sf "$DOTFILES/nvim/coc-settings.json" "$XDG_CONFIG_HOME/nvim/coc-settings.json"
 ln -sf "$DOTFILES/nvim/status.vim" "$XDG_CONFIG_HOME/nvim/status.vim"
 
-# add Xresources for the settings of uxrvt
+#######
+# X11 #
+#######
 rm -rf "$XDG_CONFIG_HOME/X11"
 ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
