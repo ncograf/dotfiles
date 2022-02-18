@@ -1,0 +1,6 @@
+coc-vimlsp
+coc-python
+coc-json
+coc-clangd
+coc-snippets
+coc-sh

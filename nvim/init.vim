@@ -27,9 +27,18 @@ let mapleader = "\<space>"
 nnoremap <leader>bn :bn<cr> ;buffer next
 nnoremap <leader>tn gt ; new tab
 
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
+"############
+"# provider #
+"############
+
+let g:python3_host_prog = '/sbin/python3'
+let g:python_host_prog = '/sbin/python2'
+
+
+"###########
+"# plugins #
+"###########
+
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 
 Plug 'lervag/vimtex'
@@ -58,13 +67,6 @@ Plug 'dylanaraps/wal.vim'
 
 " get coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'iamcco/coc-vimlsp'
-Plug 'neoclide/coc-python'
-Plug 'neoclide/coc-json'
-Plug 'clangd/coc-clangd'
-Plug 'neoclide/coc-snippets'
-Plug 'josa42/coc-sh'
-
 
 call plug#end()
 
@@ -109,6 +111,8 @@ colorscheme wal
 
 " neoclide/coc.nvim 
 source $XDG_CONFIG_HOME/nvim/coc.vim
+let coc_extensions_path=$XDG_CONFIG_HOME . "/nvim/coc-extensions.txt"
+let g:coc_global_extensions = readfile(coc_extensions_path)
 
 "####################
 "# General settings #
@@ -210,5 +214,20 @@ set undodir=$HOME/.config/nvim/undo
 set undolevels=10000
 set undoreload=10000
 
+"########
+"# Tmux #
+"########
+
 " change the binding for horizontal split to be consistent with tmux 
 nnoremap <c-w>h <c-w>s
+
+"################
+"# Clang format #
+"################
+function Formatonsave()
+  let l:formatdiff=1
+  let l:lines="all"
+  pyf /usr/share/clang/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.cc,*.cpp,*.c call Formatonsave()
+
