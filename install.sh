@@ -69,7 +69,7 @@ ln -sf "$DOTFILES/tmuxp/arch_installer.yml" "$XDG_CONFIG_HOME/tmuxp/arch_install
 #########
 # we need to copy the folders since linking will create an extra link in the folder itself
 mkdir -p "$XDG_DATA_HOME"
-rm -rf "XDG_DATA_HOME/fonts"
+rm -rf "$XDG_DATA_HOME/fonts"
 ln -sf "$DOTFILES/fonts" "$XDG_DATA_HOME/fonts"
 
 ###############

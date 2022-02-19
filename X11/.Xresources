@@ -3,7 +3,7 @@
 ! Colors will be added in another file which is atomatically created by pywal
 
 ! Set the font used
-URxvt*font: xft:Hack\ Nerd\ Font\ Mono:style=Regular:size=13:antialias=true:autohint=true
+URxvt*font: xft:Hack\ Nerd\ Font\ Mono:style=Regular:size=13:antialias=true:autohint=true:minspace=true
 
 ! make the spaces between the letters smaller
 URxvt*letterSpace: -1 
