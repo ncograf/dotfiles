@@ -25,7 +25,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-export WALLPAPERS="$HOME/wallpapers"
+export WALLPAPERS="$XDG_CONFIG_HOME/wallpapers"
 
 # rofi firefox extension
 export PATH="$PATH:$XDG_CONFIG_HOME/rofi/rofi-bookmarks"

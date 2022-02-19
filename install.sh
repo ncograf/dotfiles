@@ -6,6 +6,10 @@
 # -s -> soft (symbolic) link 
 # -f -> force (remove existing files and replace them by the link)
 
+#######
+# ZSH #
+#######
+
 # create direcotry for the shell 
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
@@ -16,7 +20,13 @@ ln -sf "$DOTFILES/zsh/aliases" "$XDG_CONFIG_HOME/zsh/aliases"
 
 # add external folder for files we did not write ourselfs
 rm -rf "$XDG_CONFIG_HOME/zsh/external"
-ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
+ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh/external"
+
+# wallpaper folder
+rm -rf "$XDG_CONFIG_HOME/wallpapers"
+ln -sf "$DOTFILES/wallpapers" "$XDG_CONFIG_HOME/wallpapers"
+
+
 
 # add xinit file 
 ln -sf "$DOTFILES/X11/.xinitrc" "$HOME"

@@ -97,7 +97,7 @@ wal_paper()
     elif [[ $1 == math ]] ; then
       wal_full "$WALLPAPERS/math.jpg" 
     elif [[ -f "$XDG_CONFIG_HOME/wal/wal" ]] && [[ -f $(< "$XDG_CONFIG_HOME/wal/wal") ]] ; then 
-      wal_full $(< "/home/nico/.cache/wal/wal")
+      wal_full $(< "$XDG_CACHE_HOME/wal/wal")
     else
       # default paper
       wal_full "$WALLPAPERS/math.jpg" 
@@ -148,27 +148,3 @@ cisco()
     /opt/cisco/anyconnect/bin/vpnui
 }
 
-#
-# Bspwm scripts for desktop handling 
-#
-merge_hdmi()
-{
-    bspc desktop II -m eDP-1
-    bspc desktop IV -m eDP-1
-    bspc desktop VI -m eDP-1
-    bspc desktop VIII -m eDP-1
-    bspc desktop X -m eDP-1
-    bspc monitor eDP-1 -o I II III IV V VI VII VIII IX X
-}
-
-extend_hdmi()
-{
-    bspc desktop II -m HDMI-1
-    bspc desktop IV -m HDMI-1
-    bspc desktop VI -m HDMI-1
-    bspc desktop VIII -m HDMI-1
-    bspc desktop X -m HDMI-1
-    bspc monitor HDMI-1 -o II IV VI VIII X
-    bspc monitor eDP-1 -o I III V VII IX
-
-}
