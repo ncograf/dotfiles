@@ -44,9 +44,6 @@ call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 
-" requries nodejs and yarn
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-
 " add windowresizer
 Plug 'simeji/winresizer'
 

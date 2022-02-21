@@ -4,3 +4,5 @@ coc-json
 coc-clangd
 coc-snippets
 coc-sh
+coc-webview
+coc-markdown-preview-enhanced

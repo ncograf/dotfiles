@@ -166,3 +166,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+"####################
+"# Markdown-Preview #
+"#################### 
+nnoremap <silent><nowait> <leader>m :<c-u>CocCommand markdown-preview-enhanced.openPreview<cr>
+autocmd BufRead *.md :CocCommand markdown-preview-enhanced.openPreview
