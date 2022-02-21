@@ -98,7 +98,7 @@ if [ $(command -v "fzf") ]; then
 fi
 
 # set up the keychain for ssh
-eval $(keychain --eval --quiet gitlab_eth github_rsa)
+eval $(keychain --eval --quiet gitlab_eth github_rsa syno_rsa syno_rsa)
 
 # start tmux if not already running
 #if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
