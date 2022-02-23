@@ -92,3 +92,9 @@ ln -sf "$DOTFILES/polybar" "$XDG_CONFIG_HOME/polybar"
 ########
 rm -rf "$XDG_CONFIG_HOME/rofi"
 ln -sf "$DOTFILES/rofi" "$XDG_CONFIG_HOME/rofi"
+
+#########
+# latex #
+#########
+rm -rf "$XDG_CONFIG_HOME/latex"
+ln -sf "$DOTFILES/latex" "$XDG_CONFIG_HOME/latex"
