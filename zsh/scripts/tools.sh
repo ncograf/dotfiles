@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 ftmuxp() {
     if [[ -n $TMUX ]]; then
@@ -55,10 +55,10 @@ check_flightmode_on()
 screenshot()
 {
 
-    if [ "$1" = "clip" ] ; then
+    if [[ "$1" = "clip" ]] ; then
         magick import /tmp/imagemagic.jpg
         xclip -sel clipboard -target image/jpeg /tmp/imagemagic.jpg
-    elif [ $# -eq 2 ]  &&  [ "$1" = "file" ] && [[ $2 =~ \.jpg$ ]] ; then
+    elif [[ "$#" -eq 2 ]]  &&  [[ "$1" = "file" ]] && [[ "$2" =~ \.jpg$ ]] ; then
         magick import /tmp/imagemagic.jpg
         mv /tmp/imagemagic.jpg $2
     else 
@@ -68,7 +68,7 @@ screenshot()
         name="$HOME/screenshots/screenshot$count.jpg"
         while [ -f $name ] 
         do
-            (( $count += 1 ))
+            count=$((count+1))
             name="$HOME/screenshots/screenshot$count.jpg"
         done
         magick import $name

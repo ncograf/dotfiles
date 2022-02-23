@@ -30,6 +30,8 @@ export WALLPAPERS="$XDG_CONFIG_HOME/wallpapers"
 # rofi firefox extension
 export PATH="$PATH:$XDG_CONFIG_HOME/rofi/rofi-bookmarks"
 
+# add scripts
+export PATH="$PATH:$DOTFILES/zsh/scripts"
 
 # -- ZSH -- 
 

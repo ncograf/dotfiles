@@ -1,5 +1,5 @@
 coc-vimlsp
-coc-python
+coc-pyright
 coc-json
 coc-clangd
 coc-snippets
