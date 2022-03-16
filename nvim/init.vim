@@ -65,6 +65,9 @@ Plug 'dylanaraps/wal.vim'
 " get coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 "###################

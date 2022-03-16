@@ -6,3 +6,4 @@ coc-snippets
 coc-sh
 coc-webview
 coc-markdown-preview-enhanced
+coc-java
