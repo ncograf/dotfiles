@@ -9,6 +9,12 @@ super + shift + Return
 super + shift + f
     firefox
 
+super + shift + i
+    if ! pgrep -f \
+    $XDG_CONFIG_HOME/inkscape-shortcut-manager/inkscape-shortcut-manager/main.py; then \
+    python3 $XDG_CONFIG_HOME/inkscape-shortcut-manager/inkscape-shortcut-manager/main.py& \
+    fi; inkscape
+
 super + shift + m
     thunderbird
 
@@ -20,7 +26,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # remap escape key (needed for external keyboards)
-super + z
+super + y
     setxkbmap -option caps:escape
 
 # powermenu
@@ -34,6 +40,11 @@ super + shift + space
 # rofi 
 super + space
     rofi -show bookmarks -modi 'bookmarks: rofi-bookmarks.py' -theme $XDG_CONFIG_HOME/rofi/config.rasi
+
+# screenshot 
+super + shift + s
+    source $DOTFILES/zsh/scripts/tools.sh; screenshot clip
+
 
 #
 # hardware controle
@@ -58,9 +69,6 @@ XF86WLAN
 
 XF86AudioMicMute
     sudo /usr/src/hardware_tools/toggle_mic.sh
-
-shift + ctrl + s
-    screenshot clip
 
 mod5 + Print
     source $DOTFILES/zsh/scripts/tools.sh; toggle_monitor right
@@ -94,7 +102,7 @@ super + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
-super + y
+super + z
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
@@ -162,6 +170,7 @@ super + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
 # preselect the direction
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
+
 
 # preselect the ratio
 super + ctrl + {1-9}
