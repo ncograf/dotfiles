@@ -1,9 +1,14 @@
 .anyconnect
 .asoundrc
 .asoundrc.asoundconf
+bildung/sebe/serverless-benchmarks
+bildung/sebe/fork/serverless-benchmarks
+bildung/sebe/opal-miniuw/serverless-benchmarks
+bildung/SemV/comp_sys/02
 .cache
 .conda
 .config
+Downloads
 .dwm
 .fehbg
 .gdbinit
@@ -16,12 +21,15 @@
 .lesshst
 .local
 .lyxauth
+.m2
 .mozilla
+NPDECODES
 .npm
 .ocamlinit
 .opam
 .pki
 .python_history
+R
 .ssh
 .subversion
 .thunderbird
@@ -35,9 +43,3 @@
 .yarn
 .zoom
 VirtualBox VMs
-bildung/sebe/serverless-benchmarks
-bildung/sebe/fork/serverless-benchmarks
-bildung/sebe/opal-miniuw/serverless-benchmarks
-bildung/SemV/comp_sys/02
-NPDECODES
-Downloads
