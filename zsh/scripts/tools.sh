@@ -138,6 +138,39 @@ toggle_monitor()
 
 }
 
+extend_hdmi()
+{
+    bspc desktop I -m eDP-1
+    bspc desktop III -m eDP-1
+    bspc desktop V -m eDP-1
+    bspc desktop VII -m eDP-1
+    bspc desktop IX -m eDP-1
+    bspc desktop II -m HDMI-1
+    bspc desktop IV -m HDMI-1
+    bspc desktop VI -m HDMI-1
+    bspc desktop VIII -m HDMI-1
+    bspc desktop X -m HDMI-1
+
+    bspc monitor eDP-1 -o I III V VII IX
+    bspc monitor HDMI-1 -o II IV VI VIII X
+}
+
+merge_hdmi()
+{
+    bspc desktop I -m eDP-1
+    bspc desktop III -m eDP-1
+    bspc desktop V -m eDP-1
+    bspc desktop VII -m eDP-1
+    bspc desktop IX -m eDP-1
+    bspc desktop II -m eDP-1
+    bspc desktop IV -m eDP-1
+    bspc desktop VI -m eDP-1
+    bspc desktop VIII -m eDP-1
+    bspc desktop X -m eDP-1
+
+    bspc monitor eDP-1 -o I II III IV V VI VII VIII IX X
+}
+
 rs_bt()
 {
     sudo /usr/src/hardware_tools/restart_bluetooth.sh

@@ -57,3 +57,5 @@ export PATH="$PATH:$HOME/scripts:$HOME/.local/bin"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# latex setup
+export LATEX=$XDG_CONFIG_HOME/latex
