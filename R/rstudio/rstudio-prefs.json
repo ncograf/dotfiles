@@ -1,0 +1,8 @@
+{
+    "initial_working_directory": "~",
+    "editor_keybindings": "vim",
+    "pdf_previewer": "rstudio",
+    "spelling_dictionary_language": "",
+    "posix_terminal_shell": "zsh",
+    "editor_theme": "pywal"
+}

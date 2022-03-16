@@ -98,3 +98,18 @@ ln -sf "$DOTFILES/rofi" "$XDG_CONFIG_HOME/rofi"
 #########
 rm -rf "$XDG_CONFIG_HOME/latex"
 ln -sf "$DOTFILES/latex" "$XDG_CONFIG_HOME/latex"
+
+############
+# inkscape #
+############
+rm -rf "$XDG_CONFIG_HOME/inkscape-shortcut-manager"
+ln -sf "$DOTFILES/inkscape-shortcut-manager" "$XDG_CONFIG_HOME/inkscape-shortcut-manager"
+
+#####
+# R #
+#####
+rm -rf "$XDG_CONFIG_HOME/RStudio"
+ln -sf "$DOTFILES/R/RStudio" "$XDG_CONFIG_HOME/RStudio"
+rm -rf "$XDG_CONFIG_HOME/rstudio"
+ln -sf "$DOTFILES/R/rstudio" "$XDG_CONFIG_HOME/rstudio"
+mkdir -p "$XDG_CONFIG_HOME/R/themes"
