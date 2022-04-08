@@ -113,3 +113,10 @@ ln -sf "$DOTFILES/R/RStudio" "$XDG_CONFIG_HOME/RStudio"
 rm -rf "$XDG_CONFIG_HOME/rstudio"
 ln -sf "$DOTFILES/R/rstudio" "$XDG_CONFIG_HOME/rstudio"
 mkdir -p "$XDG_CONFIG_HOME/R/themes"
+
+###########
+# systemd #
+###########
+rm -rf "$XDG_CONFIG_HOME/systemd"
+ln -sf "$DOTFILES/systemd" "$XDG_CONFIG_HOME/systemd"
+

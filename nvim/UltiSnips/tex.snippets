@@ -128,39 +128,13 @@ snippet () "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet taylor "taylor" w
-\sum_{${1:k}=${2:0}}^{${3:\infty}} ${4:c_$1} (x-a)^$1 $0
-endsnippet
-
-snippet lim "limit" w
-\lim_{${1:n} \to ${2:\infty}} 
-endsnippet
-
-snippet limsup "limsup" w
-\limsup_{${1:n} \to ${2:\infty}} 
-endsnippet
-
-snippet prod "product" w
-\prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
-endsnippet
-
 snippet part "d/dx" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
 context "math()"
-snippet sq "\sqrt{}" iA
-\sqrt{${1:${VISUAL}}} $0
-endsnippet
-
-context "math()"
 snippet sr "^2" iA
 ^2
-endsnippet
-
-context "math()"
-snippet cb "^3" iA
-^3
 endsnippet
 
 context "math()"
@@ -170,16 +144,6 @@ endsnippet
 
 snippet __ "subscript" iA
 _{$1}$0
-endsnippet
-
-context "math()"
-snippet EE "geq" iA
-\exists 
-endsnippet
-
-context "math()"
-snippet AA "forall" iA
-\forall 
 endsnippet
 
 snippet plot "Plot" w
@@ -204,23 +168,9 @@ snippet mcal "mathcal" iA
 \mathcal{$1}$0
 endsnippet
 
-snippet lll "l" iA
-\ell
-endsnippet
-
 context "math()"
 snippet nabl "nabla" iA
 \nabla 
-endsnippet
-
-context "math()"
-snippet xx "cross" iA
-\times 
-endsnippet
-
-priority 100
-snippet ** "cdot" iA
-\cdot 
 endsnippet
 
 context "math()"
@@ -246,11 +196,6 @@ snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
-snippet || "mid" iA
- \mid 
-endsnippet
-
-
 context "math()"
 snippet cc "subset" Ai
 \subset 
@@ -266,24 +211,8 @@ snippet NN "n" iA
 \N
 endsnippet
 
-snippet Nn "cap" iA
-\cap 
-endsnippet
-
-snippet UU "cup" iA
-\cup 
-endsnippet
-
 snippet OT "Topologie" iA
 \mathcal{O}
-endsnippet
-
-snippet uuu "bigcup" iA
-\bigcup_{${1:i \in ${2: I}}} $0
-endsnippet
-
-snippet nnn "bigcap" iA
-\bigcap_{${1:i \in ${2: I}}} $0
 endsnippet
 
 snippet OO "emptyset" iA
@@ -312,11 +241,6 @@ endsnippet
 
 
 context "math()"
-snippet '(?<!i)sts' "text subscript" irA
-_\text{$1} $0
-endsnippet
-
-context "math()"
 snippet text "text" iA
 \text{$1}$0
 endsnippet
@@ -330,21 +254,6 @@ snippet case "cases" wA
 \begin{cases}
 	$1
 \end{cases}
-endsnippet
-
-snippet SI "SI" iA
-\SI{$1}{$2}
-endsnippet
-
-snippet bigfun "Big function" iA
-\begin{align*}
-	$1: $2 &\longrightarrow $3 \\\\
-	$4 &\longmapsto $1($4) = $0
-.\end{align*}
-endsnippet
-
-snippet cvec "column vector" iA
-\begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
 endsnippet
 
 priority 10
@@ -371,16 +280,11 @@ snippet "hat" "hat" riA
 \widehat{$1}$0
 endsnippet
 
-priority 100
+priority 10
 context "math()"
-snippet "([a-zA-Z])hat" "hat" riA
-\hat{`!p snip.rv=match.group(1)`}
+snippet "tilde" "tilde" riA
+\widetilde{$1}$0
 endsnippet
-
-snippet letw "let omega" iA
-Let $\Omega \subset \C$ be open.
-endsnippet
-
 
 snippet HH "H" iA
 \mathbb{H}
@@ -393,10 +297,4 @@ endsnippet
 snippet SS "S" iA 
 \mathbb{S}
 endsnippet
-
-context "math()"
-snippet '\.(.+)\.(b)' "mathbf" wrA
-\mathbf{`!p snip.rv=match.group(1)`}
-endsnippet
-
 # vim:ft=snippets

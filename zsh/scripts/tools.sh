@@ -184,6 +184,5 @@ cisco()
 # backup to synology
 backup()
 {
-    user=$(whoami)
-    rsync -aESzv --progress --delete -e 'ssh' --exclude-from $DOTFILES/backup/rsync_exclude.txt /home/$user/ backup:~/tp_backup_$user
+    $DOTFILES/zsh/scripts/backup.sh
 }

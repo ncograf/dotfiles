@@ -1,0 +1,14 @@
+# Backup service that just calls the backup function
+# By Nico Graf
+#
+
+[Unit]
+Description=Call Backup function
+Wants=backup.timer
+
+[Service]
+Type=oneshot
+ExecStart = /bin/bash -c 'eval "$(keychain --noask --agents ssh -Q --quiet --eval syno_nico)"; /home/nico/dotfiles/zsh/scripts/backup.sh'
+
+[Install]
+WantedBy=default.target

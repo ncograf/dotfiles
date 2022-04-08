@@ -1,0 +1,15 @@
+# Timer for backup 
+# By Nico Graf
+#
+
+[Unit]
+Description=Backups home directory if connection can be established
+Requires=backup.service
+
+[Timer]
+Unit=backup.service
+# 60 * 15 = 900
+OnUnitActiveSec=900
+
+[Install]
+WantedBy=timers.target
